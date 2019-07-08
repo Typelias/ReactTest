@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Message from "./Message";
 
 class ChatWindow extends Component {
-  state = {};
+  state = {
+    activeUser: this.props.activeUser
+  };
 
   readFile = () => {};
 
@@ -10,7 +12,12 @@ class ChatWindow extends Component {
     super(props);
   }
   render() {
-    return <div />;
+    return (
+      <div className="chatWindow">
+        <Message userID="1" activeUser={this.activeUser} />
+        <Message userID="2" activeUser={this.activeUser} />
+      </div>
+    );
   }
 }
 

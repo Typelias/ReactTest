@@ -9,15 +9,13 @@ class Message extends Component {
 
   getClassName = () => {
     if (this.state.userID === this.state.activeUser) {
-      return "activeUser";
+      return "activeUser message";
     }
-    return "standardMessage";
+    return "standardMessage message";
   };
 
   render() {
-    return (
-      <div className={getClassName() + " message"}> {this.state.Message}</div>
-    );
+    return <div className={this.getClassName()}>{this.state.text}</div>;
   }
 }
 
