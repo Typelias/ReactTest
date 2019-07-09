@@ -3,19 +3,28 @@ import Message from "./Message";
 
 class ChatWindow extends Component {
   state = {
-    activeUser: this.props.activeUser
+    activeUser: this.props.activeUser,
+    messages: [
+      { ID: 1, userID: "1", message: "Hej" },
+      { ID: 2, userID: "2", message: "Tja" },
+      { ID: 3, userID: "1", message: "Läget?" },
+      { ID: 4, userID: "2", message: "Bra" },
+      { ID: 5, userID: "2", message: "Själv?" },
+      { ID: 6, userID: "1", message: "Bara bra" }
+    ]
   };
 
-  readFile = () => {};
-
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div className="chatWindow">
-        <Message userID="1" activeUser={this.activeUser} />
-        <Message userID="2" activeUser={this.activeUser} />
+        {this.state.messages.map(message => (
+          <Message
+            key={message.ID}
+            userID={message.userID}
+            activeUser={this.state.activeUser}
+            message={message.message}
+          />
+        ))}
       </div>
     );
   }

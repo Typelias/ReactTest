@@ -1,13 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 .chatWindow {
   background-color: lightgray;
   width: 70%;
   float: right;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 .message {
   line-height: 30px;
-  width: 10%;
+  padding: 5px;
+  max-width: 50%;
   align-self: flex-start;
   background-color: darkgray;
   border-radius: 25px;
