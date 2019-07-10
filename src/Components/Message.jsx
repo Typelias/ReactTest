@@ -8,7 +8,6 @@ class Message extends Component {
   };
 
   getClassName = () => {
-    console.log(this.state);
     if (this.state.userID === this.state.activeUser) {
       return "activeUser message";
     }
