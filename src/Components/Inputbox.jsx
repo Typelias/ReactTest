@@ -11,11 +11,24 @@ class Inputbox extends Component {
     this.props.onSend(inputBox.value);
     inputBox.value = "";
   };
+
   render() {
     return (
       <div id="Inputbox">
         <input id="inputText" type="text" />
-        <button onClick={() => this.send()}>Send</button>
+        <button id="send" onClick={() => this.send()}>
+          Send
+        </button>
+        {document.addEventListener("DOMContentLoaded", function() {
+          document
+            .getElementById("inputText")
+            .addEventListener("keydown", function(event) {
+              if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("send").click();
+              }
+            });
+        })}
       </div>
     );
   }

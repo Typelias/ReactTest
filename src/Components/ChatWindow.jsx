@@ -29,14 +29,16 @@ class ChatWindow extends Component {
   render() {
     return (
       <div className="chatWindow">
-        {this.state.messages.map(message => (
-          <Message
-            key={message.ID}
-            userID={message.userID}
-            activeUser={this.state.activeUser}
-            message={message.message}
-          />
-        ))}
+        <div id="chat">
+          {this.state.messages.map(message => (
+            <Message
+              key={message.ID}
+              userID={message.userID}
+              activeUser={this.state.activeUser}
+              message={message.message}
+            />
+          ))}
+        </div>
         <Inputbox onSend={this.handleSend} />
       </div>
     );

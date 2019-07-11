@@ -2,22 +2,26 @@
   padding: 0;
   margin: 0;
 }
+
+#root {
+  height: 100%;
+}
 .chatWindow {
-  background-color: lightgray;
+  border: solid black 2px;
+  height: 100%;
   width: 50%;
-  float: right;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  padding: 10px;
 }
 .message {
   line-height: 30px;
-  padding: 5px;
+  padding: 7px;
   max-width: 50%;
   align-self: flex-start;
   background-color: darkgray;
-  border-radius: 25px;
-  text-align: center;
+  border-radius: 15px;
+  margin-top: 5px;
 }
 
 .activeUser {
@@ -29,6 +33,23 @@
 #Inputbox {
   margin-top: 10px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  border-top: 2px solid gray;
+}
+#inputText {
+  width: 90%;
+  height: 25px;
+  font-size: 20px;
+}
+
+#send {
+  width: 10%;
+}
+
+#chat {
+  padding: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
 }
