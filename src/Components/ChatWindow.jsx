@@ -23,8 +23,14 @@ class ChatWindow extends Component {
     last++;
     messages.push({ ID: last, userID: this.state.activeUser, message: input });
 
-    this.setState({ messages: messages });
-    console.log(this.state.messages);
+    this.setState({ messages: messages }, () => {
+      this.scrollBot();
+    });
+  };
+
+  scrollBot = () => {
+    let box = document.getElementById("chat");
+    box.scrollTop = box.scrollHeight;
   };
   render() {
     return (

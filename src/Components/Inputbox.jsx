@@ -15,7 +15,7 @@ class Inputbox extends Component {
   render() {
     return (
       <div id="Inputbox">
-        <input id="inputText" type="text" />
+        <input id="inputText" type="text" placeholder="Enter message" />
         <button id="send" onClick={() => this.send()}>
           Send
         </button>
